@@ -310,8 +310,8 @@ clear
 TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipv4.icanhazip.com)
 TIMES="10"
-CHATID="5014929660"
-KEY="6593940626:AAEKp-YH7_fGkNPykN1KOLX-rr5fLeRaEcU"
+CHATID="6491209912"
+KEY="6949084357:AAHhg64r2S4wDiPv0SU94qaZVqYGtPzw7mI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 restart_system() {
     USRSC=$(wget -qO- https://raw.githubusercontent.com/redmiadevil/vip/main/izin | grep $ipsaya | awk '{print $2}')
@@ -891,14 +891,14 @@ cat >/etc/cron.d/xp_all <<-END
     cat >/etc/cron.d/daily_reboot <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		0 5 * * * root /sbin/reboot
+		0 3 * * * root /sbin/reboot
 	END
 
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
     cat >/home/daily_reboot <<-END
-		5
+		3
 	END
 
 cat >/etc/systemd/system/rc-local.service <<EOF
